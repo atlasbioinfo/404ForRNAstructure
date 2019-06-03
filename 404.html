@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang=en>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <script src="./fornac.js"></script>
+  <link href="./fornac.css" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    .errtitle {
+      font-size: 400px;
+      height: 500px;
+    }
+
+    #errorStructure {
+      margin-bottom: -100px;
+      display: inline-block;
+    }
+
+    .jumbotron {
+      text-align: center;
+    }
+
+  </style>
+  <div class="jumbotron">
+    <div class="row" style="height: 500px; display: inline;">
+      <span class='errtitle'>4</span>
+      <div id="errorStructure" style="height: 500px;width: 500px"></div>
+      <span class='errtitle '>4</span>
+    </div>
+    <div id='errmessage'>
+      <h3>Oh, page not found. You can drag the RNA structure above for fun :)</h3>
+      <h3>Bug report please contact Dr. Haopeng Yu at: atlasbioin4@gmail.com or atlasbioinfo@163.com</h3>
+    </div>
+  </div>
+
+  <script>
+    let errStructure = new fornac.FornaContainer("#errorStructure", { 'applyForce': true, allowPanningAndZooming: false });
+    let optionserr = {
+      'structure': "(((((............................................)))))",
+      'sequence': "CAGCACGACACUAGCAGUCAGUGUCCACUAGCAGUCAGUGUCAGACUGCAIACAG"
+    };
+    errStructure.addRNA(optionserr.structure, optionserr);
+  </script>
+
+
+</body>
+
+</html>
